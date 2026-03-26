@@ -8,20 +8,18 @@ interface Props {
   keyMessage: string;
   deliverable: string;
   status: 'completed' | 'current' | 'upcoming';
+  slug?: string;
 }
 
-const { number, title, type, mission, level, keyMessage, deliverable, status } = Astro.props;
+const { number, title, type, mission, level, keyMessage, deliverable, status, slug } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const href = slug ? `${base}sessions/${slug}/` : undefined;
 
 const borderColor = {
   completed: 'border-l-text-muted',
   current: 'border-l-accent',
   upcoming: 'border-l-bg-hover',
-}[status];
-
-const statusLabel = {
-  completed: '완료',
-  current: '진행중',
-  upcoming: '예정',
 }[status];
 
 const typeLabel = {
@@ -31,35 +29,37 @@ const typeLabel = {
 }[type];
 ---
 
-<article class={`bg-bg-card rounded-card border-l-4 ${borderColor} p-5 hover:bg-bg-hover transition-colors`}>
-  <div class="flex items-start justify-between gap-3 mb-3">
-    <div class="flex items-center gap-2">
-      <span class="font-mono text-xs text-text-muted">#{number.toString().padStart(2, '0')}</span>
-      <span class={`text-xs px-1.5 py-0.5 rounded-btn font-mono ${type === 'practice' ? 'bg-accent/10 text-accent' : type === 'special' ? 'bg-yellow-500/10 text-yellow-400' : 'bg-blue-500/10 text-blue-400'}`}>
-        {typeLabel}
+<a href={href} class="block group">
+  <article class={`bg-bg-card rounded-card border-l-4 ${borderColor} p-5 group-hover:bg-bg-hover transition-colors`}>
+    <div class="flex items-start justify-between gap-3 mb-3">
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-xs text-text-muted">#{number.toString().padStart(2, '0')}</span>
+        <span class={`text-xs px-1.5 py-0.5 rounded-btn font-mono ${type === 'practice' ? 'bg-accent/10 text-accent' : type === 'special' ? 'bg-yellow-500/10 text-yellow-400' : 'bg-blue-500/10 text-blue-400'}`}>
+          {typeLabel}
+        </span>
+      </div>
+      {status === 'current' && (
+        <span class="text-xs px-2 py-0.5 rounded-btn bg-accent/20 text-accent font-mono animate-pulse">
+          진행중
+        </span>
+      )}
+    </div>
+
+    <h3 class="font-mono font-semibold text-text-primary text-sm mb-2 leading-snug group-hover:text-accent transition-colors">{title}</h3>
+
+    {mission && (
+      <p class="text-text-secondary text-xs mb-3">
+        <span class="text-accent font-mono">MISSION</span> {mission}
+      </p>
+    )}
+
+    <p class="text-text-muted text-xs leading-relaxed mb-3">{keyMessage}</p>
+
+    <div class="flex items-center justify-between text-xs">
+      <span class="text-text-muted font-mono">{level}</span>
+      <span class={`font-mono ${deliverable !== '없음' ? 'text-accent' : 'text-text-muted'}`}>
+        {deliverable !== '없음' ? `>> ${deliverable}` : '관찰 중심'}
       </span>
     </div>
-    {status === 'current' && (
-      <span class="text-xs px-2 py-0.5 rounded-btn bg-accent/20 text-accent font-mono animate-pulse">
-        {statusLabel}
-      </span>
-    )}
-  </div>
-
-  <h3 class="font-mono font-semibold text-text-primary text-sm mb-2 leading-snug">{title}</h3>
-
-  {mission && (
-    <p class="text-text-secondary text-xs mb-3">
-      <span class="text-accent font-mono">MISSION</span> {mission}
-    </p>
-  )}
-
-  <p class="text-text-muted text-xs leading-relaxed mb-3">{keyMessage}</p>
-
-  <div class="flex items-center justify-between text-xs">
-    <span class="text-text-muted font-mono">{level}</span>
-    <span class={`font-mono ${deliverable !== '없음' ? 'text-accent' : 'text-text-muted'}`}>
-      {deliverable !== '없음' ? `>> ${deliverable}` : '관찰 중심'}
-    </span>
-  </div>
-</article>
+  </article>
+</a>
