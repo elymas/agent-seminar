@@ -47,6 +47,18 @@ bookRef: "Ch.4.1-4.3 Skills 개념, Skill 설계 템플릿"
 
 ---
 
+### 스킬이란? — 매트릭스에서 찾은 비유
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:1.5rem 0;border-radius:4px;">
+  <iframe src="https://www.youtube.com/embed/9Luu4itC-Zs?si=8Stiafs9mU2d8Jdi" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+1999년 영화 매트릭스의 헬기 조종 장면을 기억하시나요? 네오가 트리니티에게 헬기 조종을 할 줄 아느냐고 묻자, 본부에 전화해 헬기 모델을 알리고 **사용 설명서를 전송해달라고 하는 씬**이 있습니다.
+
+Claude Code의 **Skill이 바로 그 사용 설명서입니다.** 필요한 순간에 필요한 지식만 로드하여, AI가 즉시 전문가처럼 행동할 수 있게 합니다.
+
+---
+
 ### Skill이란 무엇인가
 
 Skill은 **반복 업무를 구조화한 "업무 레시피"**입니다. AI가 이 레시피를 따라 실행하면, 사람이 매번 상세히 설명하지 않아도 일관된 결과물을 생성합니다.
