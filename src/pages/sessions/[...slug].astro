@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 
@@ -29,113 +29,154 @@ const typeColor: Record<string, string> = {
   practice: 'bg-accent/10 text-accent border-accent/20',
   special: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
 };
-const statusLabel: Record<string, string> = { completed: '완료', current: '진행중', upcoming: '예정' };
+
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
 <BaseLayout title={`#${number.toString().padStart(2, '0')} ${title}`}>
+
+  <!-- Session Progress Bar -->
+  <div class="mb-8 py-3 border-b border-bg-hover">
+    <div class="flex items-center justify-between mb-2">
+      <span class="font-mono text-[10px] text-text-muted tracking-widest uppercase">Session Progress</span>
+      <span class="font-mono text-[10px] text-accent">{number} / 12</span>
+    </div>
+    <div class="flex gap-1">
+      {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
+        <a
+          href={`${base}sessions/session-${n.toString().padStart(2, '0')}/`}
+          class={`h-1.5 flex-1 rounded-full transition-colors ${
+            n < number ? 'bg-text-muted/40' :
+            n === number ? 'bg-accent' :
+            'bg-bg-hover'
+          }`}
+          title={`Session ${n}`}
+        />
+      ))}
+    </div>
+  </div>
+
   <!-- Breadcrumb -->
-  <nav class="mb-8 text-xs font-mono text-text-muted" aria-label="Breadcrumb">
+  <nav class="mb-6 text-xs font-mono text-text-muted" aria-label="Breadcrumb">
     <a href={`${base}curriculum/`} class="hover:text-accent transition-colors">커리큘럼</a>
-    <span class="mx-2">/</span>
-    <span class="text-text-secondary">Week {week}</span>
-    <span class="mx-2">/</span>
-    <span class="text-text-primary">세션 {number.toString().padStart(2, '0')}</span>
+    <span class="mx-2 opacity-40">/</span>
+    <span class="text-text-secondary">Week {week} &mdash; {weekTheme}</span>
   </nav>
 
   <!-- Session Header -->
-  <header class="mb-10">
-    <div class="flex flex-wrap items-center gap-3 mb-4">
-      <span class="font-mono text-text-muted text-sm">#{number.toString().padStart(2, '0')}</span>
-      <span class={`text-xs px-2 py-0.5 rounded-btn font-mono border ${typeColor[type]}`}>
+  <header class="mb-8 pb-8 border-b border-bg-hover">
+    <div class="flex flex-wrap items-center gap-2.5 mb-5">
+      <span class="font-mono text-2xl font-bold text-text-muted/30">{number.toString().padStart(2, '0')}</span>
+      <span class={`text-xs px-2.5 py-1 rounded-btn font-mono border ${typeColor[type]}`}>
         {typeLabel[type]}
       </span>
-      <span class="text-xs font-mono text-text-muted">{level}</span>
+      <span class="text-xs font-mono text-text-muted bg-bg-card px-2 py-1 rounded-btn">{level}</span>
       {status === 'current' && (
-        <span class="text-xs px-2 py-0.5 rounded-btn bg-accent/20 text-accent font-mono animate-pulse">
-          {statusLabel[status]}
+        <span class="text-xs px-2.5 py-1 rounded-btn bg-accent/20 text-accent font-mono animate-pulse">
+          진행중
         </span>
       )}
     </div>
 
-    <h1 class="font-mono text-2xl md:text-3xl font-bold text-text-primary leading-tight mb-3">
+    <h1 class="font-mono text-2xl md:text-4xl font-bold text-text-primary leading-tight mb-4">
       {title}
     </h1>
 
-    <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-3xl">
+    <p class="text-text-secondary text-base leading-relaxed max-w-3xl">
       {keyMessage}
     </p>
   </header>
 
   <!-- Meta Cards -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-    <div class="bg-bg-card rounded-card p-4">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-1">WEEK</p>
-      <p class="text-text-primary text-sm font-semibold">{week}주차</p>
-      <p class="text-text-muted text-xs mt-0.5">{weekTheme}</p>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
+      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">WEEK</p>
+      <p class="text-text-primary text-base font-bold font-mono">{week}주차</p>
+      <p class="text-text-muted text-xs mt-1">{weekTheme}</p>
     </div>
-    <div class="bg-bg-card rounded-card p-4">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-1">TIME</p>
-      <p class="text-text-primary text-sm font-semibold">30분</p>
-      <p class="text-text-muted text-xs mt-0.5">{timeStructure}</p>
+    <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
+      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">TIME</p>
+      <p class="text-text-primary text-base font-bold font-mono">30분</p>
+      <p class="text-text-muted text-xs mt-1">{timeStructure}</p>
     </div>
-    <div class="bg-bg-card rounded-card p-4">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-1">DELIVERABLE</p>
-      <p class={`text-sm font-semibold ${deliverable !== '없음' ? 'text-accent' : 'text-text-muted'}`}>
+    <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
+      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">DELIVERABLE</p>
+      <p class={`text-base font-bold font-mono ${deliverable !== '없음' ? 'text-accent' : 'text-text-muted'}`}>
         {deliverable}
       </p>
     </div>
     {bookRef && (
-      <div class="bg-bg-card rounded-card p-4">
-        <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-1">REFERENCE</p>
-        <p class="text-text-muted text-xs">{bookRef}</p>
+      <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
+        <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">REFERENCE</p>
+        <p class="text-text-secondary text-xs leading-relaxed">{bookRef}</p>
       </div>
     )}
   </div>
 
   {mission && (
-    <div class="bg-accent/5 border border-accent/20 rounded-card p-5 mb-10">
-      <p class="font-mono text-accent text-xs tracking-widest uppercase mb-2">MISSION</p>
-      <p class="text-text-primary text-sm font-semibold">{mission}</p>
+    <div class="bg-accent/5 border border-accent/30 rounded-card p-6 mb-10">
+      <div class="flex items-start gap-3">
+        <span class="text-accent text-lg font-mono font-bold mt-0.5">></span>
+        <div>
+          <p class="font-mono text-accent text-xs tracking-widest uppercase mb-2">MISSION</p>
+          <p class="text-text-primary text-base font-semibold leading-snug">{mission}</p>
+        </div>
+      </div>
     </div>
   )}
 
-  <!-- Session Content -->
-  <article class="prose prose-invert prose-sm max-w-none
-    prose-headings:font-mono prose-headings:text-text-primary prose-headings:font-semibold
-    prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-bg-hover prose-h2:pb-2
-    prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
-    prose-p:text-text-secondary prose-p:leading-relaxed prose-p:text-sm
-    prose-li:text-text-secondary prose-li:text-sm
-    prose-strong:text-text-primary
-    prose-code:text-accent prose-code:bg-bg-card prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-btn prose-code:text-xs prose-code:font-mono
-    prose-pre:bg-bg-card prose-pre:border prose-pre:border-bg-hover prose-pre:rounded-card prose-pre:text-xs
-    prose-a:text-accent prose-a:no-underline hover:prose-a:text-accent-hover
-    prose-ul:my-3 prose-ol:my-3
-    prose-blockquote:border-accent prose-blockquote:text-text-muted
-  ">
-    <Content />
-  </article>
+  <!-- Main Content Area with TOC -->
+  <div class="lg:grid lg:grid-cols-[1fr_200px] lg:gap-12">
+
+    <!-- Session Content -->
+    <article class="min-w-0 session-content">
+      <Content />
+    </article>
+
+    <!-- Desktop TOC -->
+    {toc.length > 2 && (
+      <aside class="hidden lg:block">
+        <nav class="sticky top-20" aria-label="목차">
+          <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-3">목차</p>
+          <ul class="space-y-1.5 border-l border-bg-hover pl-3">
+            {toc.map((heading) => (
+              <li>
+                <a
+                  href={`#${heading.slug}`}
+                  class={`block text-xs transition-colors hover:text-accent ${
+                    heading.depth === 2 ? 'text-text-secondary font-medium' : 'text-text-muted pl-2'
+                  }`}
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    )}
+  </div>
 
   <!-- Prev / Next Navigation -->
   <nav class="mt-16 pt-8 border-t border-bg-hover grid grid-cols-2 gap-4" aria-label="세션 탐색">
     {prev ? (
-      <a href={`${base}sessions/${prev.id}/`} class="group bg-bg-card rounded-card p-4 hover:bg-bg-hover transition-colors">
-        <p class="font-mono text-xs text-text-muted mb-1">&larr; 이전 세션</p>
-        <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors">
+      <a href={`${base}sessions/${prev.id}/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors">
+        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">&larr; 이전 세션</p>
+        <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors leading-snug">
           #{prev.data.number.toString().padStart(2, '0')} {prev.data.title}
         </p>
       </a>
     ) : <div />}
     {next ? (
-      <a href={`${base}sessions/${next.id}/`} class="group bg-bg-card rounded-card p-4 hover:bg-bg-hover transition-colors text-right">
-        <p class="font-mono text-xs text-text-muted mb-1">다음 세션 &rarr;</p>
-        <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors">
+      <a href={`${base}sessions/${next.id}/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors text-right">
+        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">다음 세션 &rarr;</p>
+        <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors leading-snug">
           #{next.data.number.toString().padStart(2, '0')} {next.data.title}
         </p>
       </a>
     ) : (
-      <a href={`${base}curriculum/`} class="group bg-bg-card rounded-card p-4 hover:bg-bg-hover transition-colors text-right">
-        <p class="font-mono text-xs text-text-muted mb-1">돌아가기</p>
+      <a href={`${base}curriculum/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors text-right">
+        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">돌아가기</p>
         <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors">
           커리큘럼 전체 보기
         </p>
@@ -143,3 +184,153 @@ const statusLabel: Record<string, string> = { completed: '완료', current: '진
     )}
   </nav>
 </BaseLayout>
+
+<style is:global>
+  /* Session content typography */
+  .session-content h2 {
+    font-family: var(--font-mono);
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-bg-hover);
+    letter-spacing: -0.01em;
+  }
+  .session-content h2:first-child {
+    margin-top: 0;
+  }
+  .session-content h3 {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .session-content h4 {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .session-content p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .session-content ul,
+  .session-content ol {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+  }
+  .session-content li {
+    margin-bottom: 0.35rem;
+  }
+  .session-content li::marker {
+    color: var(--color-accent);
+  }
+  .session-content strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  .session-content a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .session-content a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Code blocks */
+  .session-content code:not(pre code) {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    background: var(--color-bg-card);
+    padding: 0.15rem 0.4rem;
+    border-radius: 2px;
+    border: 1px solid var(--color-bg-hover);
+  }
+  .session-content pre {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-bg-hover);
+    border-radius: 4px;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    position: relative;
+  }
+  .session-content pre code {
+    font-family: var(--font-mono);
+    color: var(--color-text-secondary);
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+  }
+
+  /* Tables */
+  .session-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.8rem;
+  }
+  .session-content th {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid var(--color-bg-hover);
+    background: var(--color-bg-card);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .session-content td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--color-bg-hover);
+    color: var(--color-text-secondary);
+  }
+  .session-content tr:hover td {
+    background: var(--color-bg-card);
+  }
+
+  /* Blockquotes as callouts */
+  .session-content blockquote {
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-accent);
+    background: rgba(16, 185, 129, 0.05);
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .session-content blockquote p {
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Horizontal rules as section dividers */
+  .session-content hr {
+    border: none;
+    border-top: 1px solid var(--color-bg-hover);
+    margin: 2.5rem 0;
+  }
+
+  /* Checkbox lists */
+  .session-content input[type="checkbox"] {
+    accent-color: var(--color-accent);
+    margin-right: 0.4rem;
+  }
+</style>
