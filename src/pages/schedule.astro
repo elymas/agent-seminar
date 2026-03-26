@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 
 const weekSchedule = [
   { week: 1, theme: 'AI와의 첫 대화를 넘어서', sessions: ['#01 챗봇 vs 에이전트', '#02 첫 프롬프트 실습'] },
