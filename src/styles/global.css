@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-bg-card: #111827;
+  --color-bg-hover: #1f2937;
+  --color-accent: #10b981;
+  --color-accent-hover: #34d399;
+  --color-text-primary: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #6b7280;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-card: 4px;
+  --radius-btn: 2px;
+}

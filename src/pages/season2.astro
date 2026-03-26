@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Season 2 예고">
+  <section class="py-12">
+    <p class="font-mono text-accent text-xs tracking-widest uppercase mb-4">Coming Next</p>
+    <h1 class="font-mono text-2xl md:text-4xl font-bold mb-6">Season 2 예고</h1>
+    <p class="text-text-secondary text-base md:text-lg leading-relaxed max-w-3xl">
+      Season 1의 피드백을 바탕으로 설계됩니다.
+    </p>
+  </section>
+
+  <!-- Core message -->
+  <section class="mb-12">
+    <div class="bg-bg-card rounded-card p-6 md:p-8 border-l-4 border-l-accent max-w-3xl">
+      <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">Philosophy</p>
+      <p class="text-text-primary text-sm md:text-base leading-relaxed mb-4">
+        Season 2는 미리 설계된 커리큘럼이 아닙니다. Season 1에 참여한 구성원들의 실제 경험과 피드백이
+        Season 2의 내용을 결정합니다.
+      </p>
+      <p class="text-text-muted text-xs leading-relaxed">
+        어떤 주제가 더 깊이 필요했는지, 어떤 실무 상황에서 막혔는지, 어떤 도구를 더 알고 싶은지 &mdash;
+        이 모든 목소리가 다음 시즌의 설계 자료가 됩니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Expected topics -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-6">예상 주제</h2>
+    <p class="text-text-muted text-xs mb-6">아래 주제들은 예상 후보이며, 실제 구성은 피드백에 따라 달라집니다.</p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">DEEP DIVE</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">CLAUDE.md 고급 패턴</p>
+        <p class="text-text-muted text-xs">팀 단위 CLAUDE.md 운영, 프로젝트별 분기, 상속 구조 등 고급 활용법</p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">PRACTICE</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">실무 Skill 라이브러리</p>
+        <p class="text-text-muted text-xs">직군별 Skill 템플릿 공유 및 실무 적용 사례 발표</p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">INTEGRATION</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">MCP 실전 연동</p>
+        <p class="text-text-muted text-xs">Slack, Notion, Google Workspace 등 사내 도구와 AI 에이전트 연동 실습</p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">WORKFLOW</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">팀 워크플로우 자동화</p>
+        <p class="text-text-muted text-xs">개인 활용을 넘어 팀 단위로 AI 에이전트를 운영하는 방법</p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">CASE STUDY</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">Season 1 성과 공유</p>
+        <p class="text-text-muted text-xs">Season 1에서 만든 산출물과 실무 적용 사례를 서로 공유하는 시간</p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors">
+        <p class="font-mono text-accent text-xs mb-2">ADVANCED</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">AI 거버넌스와 보안</p>
+        <p class="text-text-muted text-xs">사내 AI 사용 정책, 데이터 보안, 프롬프트 인젝션 방어 등</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-6">시즌 전환 타임라인</h2>
+    <div class="max-w-2xl">
+      <div class="space-y-0">
+        <!-- Step 1 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-mono text-accent text-xs font-bold">1</span>
+            </div>
+            <div class="w-px h-full bg-bg-hover"></div>
+          </div>
+          <div class="pb-8">
+            <p class="font-mono text-sm text-text-primary font-semibold">Season 1 진행</p>
+            <p class="text-text-muted text-xs mt-1">6주 12세션 커리큘럼 진행</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-mono text-accent text-xs font-bold">2</span>
+            </div>
+            <div class="w-px h-full bg-bg-hover"></div>
+          </div>
+          <div class="pb-8">
+            <p class="font-mono text-sm text-text-primary font-semibold">피드백 수집</p>
+            <p class="text-text-muted text-xs mt-1">Session #12 회고 + 설문조사를 통한 의견 수집</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <span class="font-mono text-accent text-xs font-bold">3</span>
+            </div>
+            <div class="w-px h-full bg-bg-hover"></div>
+          </div>
+          <div class="pb-8">
+            <p class="font-mono text-sm text-text-primary font-semibold">커리큘럼 설계</p>
+            <p class="text-text-muted text-xs mt-1">피드백 분석 및 Season 2 커리큘럼 구성 (약 2주)</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+              <span class="font-mono text-bg text-xs font-bold">4</span>
+            </div>
+          </div>
+          <div class="pb-4">
+            <p class="font-mono text-sm text-text-primary font-semibold">Season 2 시작</p>
+            <p class="text-text-muted text-xs mt-1">Season 1 종료 약 3-4주 후 시작 예정</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback form placeholder -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-6">피드백 폼</h2>
+    <div class="bg-bg-card rounded-card border border-bg-hover p-8 md:p-12 text-center max-w-3xl">
+      <div class="w-16 h-16 rounded-full bg-bg-hover flex items-center justify-center mx-auto mb-6">
+        <span class="font-mono text-text-muted text-2xl">?</span>
+      </div>
+      <p class="text-text-primary font-semibold text-sm mb-2">피드백 폼 준비 중</p>
+      <p class="text-text-muted text-xs leading-relaxed mb-4">
+        Season 1 진행 중에 Google Forms 기반의 피드백 폼이 이 자리에 삽입될 예정입니다.
+        <br />
+        세미나에 대한 의견, 추가로 다루고 싶은 주제, 개선사항 등을 공유해 주세요.
+      </p>
+      <div class="bg-bg-hover/50 rounded-card p-6 border border-dashed border-bg-hover">
+        <p class="font-mono text-text-muted text-xs">
+          &lt;!-- Google Forms embed will be placed here --&gt;
+        </p>
+        <p class="font-mono text-text-muted text-xs mt-2">
+          &lt;iframe src="GOOGLE_FORMS_URL" ...&gt;&lt;/iframe&gt;
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 border-t border-bg-hover text-center">
+    <p class="text-text-secondary text-sm mb-6">먼저 Season 1 커리큘럼을 확인하세요.</p>
+    <a href={`${base}curriculum/`} class="bg-accent hover:bg-accent-hover text-bg font-mono text-sm font-semibold px-6 py-3 rounded-btn transition-colors inline-block">
+      Season 1 커리큘럼 보기
+    </a>
+  </section>
+</BaseLayout>

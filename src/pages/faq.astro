@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="자주 묻는 질문">
+  <section class="py-12">
+    <p class="font-mono text-accent text-xs tracking-widest uppercase mb-4">FAQ</p>
+    <h1 class="font-mono text-2xl md:text-4xl font-bold mb-6">자주 묻는 질문</h1>
+    <p class="text-text-secondary text-base leading-relaxed max-w-3xl">
+      세미나 참여 전 궁금한 점들을 모았습니다.
+    </p>
+  </section>
+
+  <section class="py-4 max-w-3xl">
+    <div class="space-y-3">
+
+      <!-- Q1 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">Claude Code가 뭔가요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            Claude Code는 Anthropic이 만든 AI 에이전트 도구입니다. 일반적인 챗봇(Chat)과 달리,
+            파일을 읽고 쓰고, 도구를 연동하고, 워크플로우를 자동화할 수 있는 "운영 시스템"입니다.
+            이 세미나에서는 코딩이 아닌 AI 운영 개념을 배우며, 웹 기반의 Cowork 환경에서 실습합니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q2 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">코딩 경험이 없는데 참여할 수 있나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            네, 전혀 문제 없습니다. 이 세미나는 전 직원을 대상으로 설계되었습니다.
+            코드를 작성하는 것이 아니라 AI를 "운영"하는 개념과 방법을 배웁니다.
+            실습은 웹 브라우저에서 진행되며, 마크다운(Markdown) 텍스트를 작성하는 정도가 가장 어려운 작업입니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q3 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">어떤 디바이스가 필요한가요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            노트북 또는 태블릿이 필요합니다. 실습은 웹 브라우저(Chrome 또는 Safari 최신 버전 권장)에서 진행됩니다.
+            스마트폰으로도 세미나를 시청할 수 있지만, 실습 참여를 위해서는 더 큰 화면의 디바이스를 권장합니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q4 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">시즌 중간에 참여할 수 있나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            가능하지만, 첫 세션부터 참여하시는 것을 강력히 권장합니다.
+            세미나는 Adoption Ladder를 따라 단계적으로 설계되어 있어서, 앞선 개념이 뒤의 세션의 기반이 됩니다.
+            중간 참여 시에는 이전 세션의 자료를 자료실에서 확인하고, 기본 개념을 숙지한 후 참여해 주세요.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q5 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">Brown Bag Seminar가 뭔가요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            점심시간을 활용하여 편안하게 진행하는 세미나 형식입니다.
+            "Brown Bag"은 미국에서 점심 도시락을 갈색 종이봉투에 넣어 다니던 문화에서 유래한 이름입니다.
+            점심을 먹으며 30분간 가볍게 참여하는 형식이므로 업무 시간에 영향을 주지 않습니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q6 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">Season 2에서는 무엇을 하나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            Season 2는 Season 1 참여자들의 피드백을 바탕으로 설계됩니다.
+            더 깊이 다루고 싶은 주제, 실무 적용 사례, 새로운 도구 소개 등이 포함될 예정입니다.
+            Season 1 마지막 세션에서 피드백을 수집하며, 그 결과를 기반으로 커리큘럼을 구성합니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q7 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">세션을 놓치면 어떻게 하나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            각 세션의 핵심 자료와 템플릿은 자료실에서 확인할 수 있습니다.
+            실습 세션의 경우, 미션과 산출물 가이드를 자료실에서 내려받아 개인적으로 진행할 수 있습니다.
+            다만, 라이브 참여가 학습 효과가 가장 높으므로 가능하면 실시간으로 참여해 주세요.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q8 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">산출물은 어떻게 제출하나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            실습 세션에서 만드는 산출물(about-me.md, CLAUDE.md, Skill 파일 등)은 세미나 중에 직접 작성하고 저장합니다.
+            별도의 제출 시스템은 없으며, 각자의 Cowork 프로젝트 내에서 관리됩니다.
+            원하는 분은 팀 공유 폴더에 업로드하여 동료들과 공유할 수도 있습니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q9 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">Claude 유료 계정이 필요한가요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            기본적인 실습은 무료 플랜으로도 가능합니다. 다만, 일부 고급 기능(긴 대화, 파일 업로드 등)은
+            Pro 플랜에서 더 원활하게 사용할 수 있습니다. 세미나 기간 중 회사 차원의 계정 지원 여부는 별도 안내될 예정입니다.
+          </p>
+        </div>
+      </details>
+
+      <!-- Q10 -->
+      <details class="bg-bg-card rounded-card border border-bg-hover group">
+        <summary class="cursor-pointer p-5 flex items-start gap-3 list-none [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-accent text-xs mt-0.5 flex-shrink-0 group-open:rotate-90 transition-transform">></span>
+          <span class="font-mono text-sm text-text-primary font-semibold">세미나 후에도 배운 것을 활용할 수 있나요?</span>
+        </summary>
+        <div class="px-5 pb-5 pl-10">
+          <p class="text-text-muted text-xs leading-relaxed">
+            물론입니다. 세미나에서 만든 CLAUDE.md, Skill 파일 등은 세미나 이후에도 계속 사용할 수 있습니다.
+            오히려 실무에 적용하면서 점점 더 정교하게 다듬어 가는 것이 이 세미나의 궁극적인 목표입니다.
+            Season 2에서는 실무 적용 사례를 공유하는 시간도 마련될 예정입니다.
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- 추가 질문 -->
+  <section class="py-10 border-t border-bg-hover">
+    <div class="bg-bg-card rounded-card p-6 text-center max-w-3xl">
+      <p class="text-text-secondary text-sm mb-3">위에 없는 질문이 있으신가요?</p>
+      <p class="text-text-muted text-xs">세미나 운영팀에 문의하시면 답변을 드리겠습니다.</p>
+    </div>
+  </section>
+</BaseLayout>

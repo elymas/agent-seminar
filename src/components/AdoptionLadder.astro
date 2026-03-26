@@ -1,0 +1,52 @@
+---
+interface Props {
+  activeLevel?: number;
+}
+
+const { activeLevel = 0 } = Astro.props;
+
+const levels = [
+  { num: 1, name: 'Prompting', desc: '일회성 질문/응답', weeks: '1주' },
+  { num: 2, name: 'Context', desc: '맥락 파일로 일관된 결과', weeks: '2주' },
+  { num: 3, name: 'Workflows', desc: '반복 가능한 워크플로우', weeks: '3-4주' },
+  { num: 4, name: 'Automation', desc: '자동화 규칙과 도구 연동', weeks: '5주' },
+  { num: 5, name: 'Operating', desc: 'AI 자율 운영 시스템', weeks: '6주' },
+];
+---
+
+<div class="w-full">
+  <!-- Desktop: horizontal -->
+  <div class="hidden md:flex items-center justify-between gap-1">
+    {levels.map((level, i) => (
+      <div class="flex items-center flex-1">
+        <div class={`flex flex-col items-center flex-1 ${level.num <= activeLevel ? 'opacity-100' : 'opacity-50'}`}>
+          <div class={`w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm font-bold mb-2 ${level.num <= activeLevel ? 'bg-accent text-bg' : 'border-2 border-bg-hover text-text-muted'}`}>
+            {level.num}
+          </div>
+          <span class="font-mono text-xs text-text-primary font-semibold">{level.name}</span>
+          <span class="text-[10px] text-text-muted mt-0.5 text-center">{level.desc}</span>
+          <span class="text-[10px] text-accent font-mono mt-1">{level.weeks}</span>
+        </div>
+        {i < levels.length - 1 && (
+          <div class={`h-px flex-shrink-0 w-8 ${level.num < activeLevel ? 'bg-accent' : 'bg-bg-hover'}`} />
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Mobile: vertical -->
+  <div class="md:hidden flex flex-col gap-3">
+    {levels.map((level) => (
+      <div class={`flex items-center gap-3 ${level.num <= activeLevel ? 'opacity-100' : 'opacity-50'}`}>
+        <div class={`w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold flex-shrink-0 ${level.num <= activeLevel ? 'bg-accent text-bg' : 'border-2 border-bg-hover text-text-muted'}`}>
+          {level.num}
+        </div>
+        <div>
+          <span class="font-mono text-xs text-text-primary font-semibold">{level.name}</span>
+          <span class="text-[10px] text-text-muted ml-2">{level.desc}</span>
+          <span class="text-[10px] text-accent font-mono ml-2">{level.weeks}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

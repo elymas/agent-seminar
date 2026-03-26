@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="자료실">
+  <section class="py-12">
+    <p class="font-mono text-accent text-xs tracking-widest uppercase mb-4">Resources</p>
+    <h1 class="font-mono text-2xl md:text-4xl font-bold mb-6">자료실</h1>
+    <p class="text-text-secondary text-base leading-relaxed max-w-3xl">
+      세미나에서 사용하는 템플릿, 참고 자료, 용어집을 모아둔 페이지입니다.
+    </p>
+  </section>
+
+  <!-- 세션별 템플릿 -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-8">세션별 템플릿</h2>
+
+    <!-- about-me.md -->
+    <div class="mb-8">
+      <h3 class="font-mono text-sm font-semibold text-text-primary mb-2">about-me.md</h3>
+      <p class="text-text-muted text-xs mb-3">Session #02에서 사용합니다. 아래 내용을 복사하여 사용하세요.</p>
+      <div class="bg-bg-card rounded-card p-5 overflow-x-auto border border-bg-hover">
+        <pre class="text-xs text-text-secondary font-mono leading-relaxed"><code># About Me
+
+## 이름
+(본인의 이름 또는 닉네임)
+
+## 역할
+(직무/직군: 예 - 마케팅, 기획, 개발, 디자인, HR 등)
+
+## 주요 업무
+- (반복적으로 하는 업무 1)
+- (반복적으로 하는 업무 2)
+- (반복적으로 하는 업무 3)
+
+## AI에게 기대하는 것
+- (AI가 도와줬으면 하는 업무나 상황)
+
+## 선호하는 커뮤니케이션 스타일
+- 간결한 답변 / 상세한 설명
+- 한국어 / 영어 혼용
+- 공식적인 톤 / 편한 톤
+
+## 참고 사항
+(AI가 알아두면 좋은 개인적인 맥락이나 특이사항)</code></pre>
+      </div>
+    </div>
+
+    <!-- working-rules.md -->
+    <div class="mb-8">
+      <h3 class="font-mono text-sm font-semibold text-text-primary mb-2">working-rules.md</h3>
+      <p class="text-text-muted text-xs mb-3">Session #04에서 사용합니다. 아래 내용을 복사하여 사용하세요.</p>
+      <div class="bg-bg-card rounded-card p-5 overflow-x-auto border border-bg-hover">
+        <pre class="text-xs text-text-secondary font-mono leading-relaxed"><code># Working Rules
+
+## 기본 원칙
+- 항상 한국어로 응답합니다
+- 불확실한 정보는 추측하지 않고 명시합니다
+- 결과물에는 항상 출처 또는 근거를 포함합니다
+
+## 결과물 형식
+- 보고서: 마크다운 형식, 핵심 요약 먼저
+- 이메일: 공식적인 톤, 3문단 이내
+- 기획안: 배경/목적/내용/일정/예산 순서
+
+## 금지 사항
+- 개인정보 포함 금지
+- 확인되지 않은 수치 사용 금지
+- 경쟁사 비하 표현 금지
+
+## 업무 맥락
+- 회사명: (회사명)
+- 주요 고객: (B2B / B2C / 내부)
+- 산업: (IT / 금융 / 제조 / 기타)
+
+## 자주 사용하는 용어
+- (사내 용어 1): (설명)
+- (사내 용어 2): (설명)</code></pre>
+      </div>
+    </div>
+
+    <!-- SKILL.md -->
+    <div class="mb-8">
+      <h3 class="font-mono text-sm font-semibold text-text-primary mb-2">SKILL.md</h3>
+      <p class="text-text-muted text-xs mb-3">Session #06에서 사용합니다. 아래 내용을 복사하여 사용하세요.</p>
+      <div class="bg-bg-card rounded-card p-5 overflow-x-auto border border-bg-hover">
+        <pre class="text-xs text-text-secondary font-mono leading-relaxed"><code># Skill: (스킬 이름)
+
+## 목적
+(이 스킬이 해결하는 문제 또는 수행하는 작업을 한 줄로 설명)
+
+## 트리거
+- 사용자가 "(트리거 문구)"라고 말하면 이 스킬을 실행합니다
+
+## 입력
+- `input_1`: (설명) - 필수
+- `input_2`: (설명) - 선택
+
+## 실행 단계
+1. (첫 번째 단계)
+2. (두 번째 단계)
+3. (세 번째 단계)
+4. 결과를 정해진 형식으로 출력합니다
+
+## 출력 형식
+```
+(예상 출력의 형식을 여기에 작성)
+```
+
+## 제약 사항
+- (이 스킬이 하지 말아야 할 것)
+- (품질 기준 또는 검증 조건)
+
+## 예시
+### 입력
+(예시 입력)
+
+### 출력
+(예시 출력)</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 참고 자료 -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-6">참고 자료</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="https://docs.anthropic.com/en/docs" target="_blank" rel="noopener noreferrer" class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors group block">
+        <p class="font-mono text-accent text-xs mb-2 group-hover:text-accent-hover transition-colors">DOCS</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">Anthropic Claude Docs</p>
+        <p class="text-text-muted text-xs">Claude의 공식 문서입니다. API, 모델, 기능에 대한 상세한 설명을 확인할 수 있습니다.</p>
+      </a>
+      <a href="https://www.anthropic.com/courses/claude-code-in-action" target="_blank" rel="noopener noreferrer" class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors group block">
+        <p class="font-mono text-accent text-xs mb-2 group-hover:text-accent-hover transition-colors">COURSE</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">Claude Code in Action</p>
+        <p class="text-text-muted text-xs">Anthropic에서 제공하는 Claude Code 활용 과정입니다. 에이전트 운영의 실전 사례를 다룹니다.</p>
+      </a>
+      <a href="https://www.anthropic.com/courses/cc-for-everyone" target="_blank" rel="noopener noreferrer" class="bg-bg-card rounded-card p-5 hover:bg-bg-hover transition-colors group block">
+        <p class="font-mono text-accent text-xs mb-2 group-hover:text-accent-hover transition-colors">COURSE</p>
+        <p class="text-text-primary font-semibold text-sm mb-1">CC for Everyone</p>
+        <p class="text-text-muted text-xs">비개발자도 이해할 수 있는 Claude Code 입문 과정입니다. 코딩 경험 없이도 수강 가능합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 용어집 -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg md:text-xl font-bold text-text-primary mb-6">용어집</h2>
+    <div class="space-y-4">
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn flex-shrink-0 mt-0.5">CLAUDE.md</span>
+          <div>
+            <p class="text-text-primary text-sm font-semibold mb-1">AI의 업무 매뉴얼</p>
+            <p class="text-text-muted text-xs leading-relaxed">
+              Claude Code가 프로젝트에서 항상 참고하는 설정 파일입니다. 프로젝트의 규칙, 스타일, 맥락을 정의하여
+              AI가 일관된 결과를 내도록 합니다. 사람으로 치면 "팀 온보딩 문서"에 해당합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn flex-shrink-0 mt-0.5">Skill</span>
+          <div>
+            <p class="text-text-primary text-sm font-semibold mb-1">반복 가능한 AI 명령어</p>
+            <p class="text-text-muted text-xs leading-relaxed">
+              특정 작업을 반복적으로 수행할 수 있도록 설계한 명령어 템플릿입니다.
+              "/review", "/translate" 같은 슬래시 커맨드로 호출하며, 입력-처리-출력 과정이 정의되어 있습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn flex-shrink-0 mt-0.5">MCP</span>
+          <div>
+            <p class="text-text-primary text-sm font-semibold mb-1">Model Context Protocol</p>
+            <p class="text-text-muted text-xs leading-relaxed">
+              AI가 외부 도구 및 서비스와 연동하기 위한 프로토콜입니다.
+              Slack, Google Drive, Notion 등 다양한 서비스를 AI 에이전트에 연결하여 데이터를 읽고 쓸 수 있게 합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn flex-shrink-0 mt-0.5">Hook</span>
+          <div>
+            <p class="text-text-primary text-sm font-semibold mb-1">자동화 트리거</p>
+            <p class="text-text-muted text-xs leading-relaxed">
+              특정 이벤트가 발생하면 자동으로 실행되는 규칙입니다.
+              예를 들어, 코드 변경 시 자동으로 검토를 실행하거나, 파일 저장 시 형식을 정리하는 등의 자동화를 구현합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn flex-shrink-0 mt-0.5">Context Engineering</span>
+          <div>
+            <p class="text-text-primary text-sm font-semibold mb-1">맥락 설계 기술</p>
+            <p class="text-text-muted text-xs leading-relaxed">
+              AI에게 적절한 맥락(Context)을 제공하여 더 나은 결과를 얻는 기술입니다.
+              단순한 프롬프트 작성을 넘어, CLAUDE.md, 참조 문서, 예시 등을 체계적으로 구성하여 AI의 이해도를 높입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+
+const weekSchedule = [
+  { week: 1, theme: 'AI와의 첫 대화를 넘어서', sessions: ['#01 챗봇 vs 에이전트', '#02 첫 프롬프트 실습'] },
+  { week: 2, theme: 'AI에게 맥락을 주다', sessions: ['#03 CLAUDE.md 개념', '#04 CLAUDE.md 작성 실습'] },
+  { week: 3, theme: '반복을 설계하다', sessions: ['#05 Skill이란 무엇인가', '#06 나만의 Skill 만들기'] },
+  { week: 4, theme: '도구를 연결하다', sessions: ['#07 MCP & 외부 도구 연동', '#08 도구 연결 실습'] },
+  { week: 5, theme: '자동화와 신뢰', sessions: ['#09 Hook & 자동화', '#10 신뢰할 수 있는 자동화'] },
+  { week: 6, theme: '통합과 미래', sessions: ['#11 전체 통합 실습', '#12 회고 & Season 2 예고'] },
+];
+---
+
+<BaseLayout title="일정">
+  <section class="py-12">
+    <p class="font-mono text-accent text-xs tracking-widest uppercase mb-4">Schedule</p>
+    <h1 class="font-mono text-2xl md:text-4xl font-bold mb-6">일정</h1>
+    <p class="text-text-secondary text-base leading-relaxed max-w-3xl">
+      6주 12세션의 전체 일정입니다. 구체적인 날짜는 추후 공지될 예정입니다.
+    </p>
+  </section>
+
+  <!-- Notice -->
+  <section class="mb-10">
+    <div class="bg-bg-card border border-bg-hover rounded-card p-5">
+      <p class="font-mono text-accent text-xs mb-2">NOTICE</p>
+      <p class="text-text-secondary text-sm">
+        세미나의 구체적인 시작 일자 및 요일은 참여자 사전 조사 후 확정됩니다.
+        주 2회(화/목 또는 월/수) 점심시간(12:00~12:30)에 진행될 예정입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Week schedule table -->
+  <section class="mb-12">
+    <h2 class="font-mono text-lg font-bold text-text-primary mb-6">주차별 일정</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-bg-hover">
+            <th class="font-mono text-xs text-text-muted text-left py-3 pr-4 w-20">주차</th>
+            <th class="font-mono text-xs text-text-muted text-left py-3 pr-4">주제</th>
+            <th class="font-mono text-xs text-text-muted text-left py-3 hidden md:table-cell">세션</th>
+          </tr>
+        </thead>
+        <tbody>
+          {weekSchedule.map((w) => (
+            <tr class="border-b border-bg-hover/50 hover:bg-bg-hover/30 transition-colors">
+              <td class="py-4 pr-4">
+                <span class="font-mono text-accent text-xs font-semibold">Week {w.week}</span>
+              </td>
+              <td class="py-4 pr-4">
+                <span class="text-text-primary font-semibold text-sm">{w.theme}</span>
+                <div class="md:hidden mt-1 text-text-muted text-xs">
+                  {w.sessions.map((s) => (
+                    <span class="block">{s}</span>
+                  ))}
+                </div>
+              </td>
+              <td class="py-4 hidden md:table-cell">
+                <div class="flex flex-col gap-1">
+                  {w.sessions.map((s) => (
+                    <span class="text-text-muted text-xs font-mono">{s}</span>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 사전 준비 -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg font-bold text-text-primary mb-6">사전 준비</h2>
+    <p class="text-text-secondary text-sm mb-6">세미나 참여 전에 아래 항목을 준비해 주세요.</p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn">01</span>
+          <p class="font-mono text-sm text-text-primary font-semibold">Claude 계정 생성</p>
+        </div>
+        <p class="text-text-muted text-xs leading-relaxed">
+          claude.ai에서 개인 계정을 생성하세요. 무료 플랜으로도 세미나 실습이 가능합니다.
+          회사 이메일로 가입을 권장합니다.
+        </p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn">02</span>
+          <p class="font-mono text-sm text-text-primary font-semibold">디바이스 준비</p>
+        </div>
+        <p class="text-text-muted text-xs leading-relaxed">
+          노트북 또는 태블릿을 준비하세요. 실습은 웹 브라우저에서 진행되므로 최신 Chrome 또는 Safari를 권장합니다.
+        </p>
+      </div>
+      <div class="bg-bg-card rounded-card p-5">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="font-mono text-accent text-xs font-bold bg-accent/10 px-2 py-1 rounded-btn">03</span>
+          <p class="font-mono text-sm text-text-primary font-semibold">사전 설문</p>
+        </div>
+        <p class="text-text-muted text-xs leading-relaxed">
+          세미나 시작 전 배포될 사전 설문에 응답해 주세요. AI 활용 현황과 기대사항을 파악하여 세션 운영에 반영합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brown Bag Info -->
+  <section class="py-10 border-t border-bg-hover">
+    <h2 class="font-mono text-lg font-bold text-text-primary mb-6">Brown Bag Seminar란?</h2>
+    <div class="bg-bg-card rounded-card p-6 max-w-3xl">
+      <p class="text-text-secondary text-sm leading-relaxed mb-4">
+        Brown Bag Seminar는 점심시간을 활용하여 가볍게 진행하는 세미나 형식입니다.
+        "Brown Bag"이라는 이름은 미국에서 점심 도시락을 갈색 종이봉투(brown bag)에 넣어 다니던 문화에서 유래했습니다.
+      </p>
+      <ul class="space-y-2 text-text-muted text-xs">
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5 flex-shrink-0">></span>
+          <span>점심을 먹으며 편안하게 참여합니다</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5 flex-shrink-0">></span>
+          <span>30분 이내로 짧고 집중적으로 진행합니다</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5 flex-shrink-0">></span>
+          <span>업무 시간을 빼앗지 않으면서 학습할 수 있습니다</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-accent mt-0.5 flex-shrink-0">></span>
+          <span>자유로운 질문과 토론이 장려됩니다</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
