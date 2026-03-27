@@ -16,10 +16,10 @@ const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 
 const allSessions = await getCollection('sessions');
-const sorted = allSessions.sort((a, b) => a.data.number - b.data.number);
-const currentIndex = sorted.findIndex((s) => s.id === entry.id);
-const prev = currentIndex > 0 ? sorted[currentIndex - 1] : null;
-const next = currentIndex < sorted.length - 1 ? sorted[currentIndex + 1] : null;
+const regularSessions = allSessions.filter((s) => s.data.number >= 1).sort((a, b) => a.data.number - b.data.number);
+const currentIndex = regularSessions.findIndex((s) => s.id === entry.id);
+const prev = currentIndex > 0 ? regularSessions[currentIndex - 1] : null;
+const next = currentIndex >= 0 && currentIndex < regularSessions.length - 1 ? regularSessions[currentIndex + 1] : null;
 
 const { number, title, week, weekTheme, type, mission, level, keyMessage, deliverable, timeStructure, status, bookRef } = entry.data;
 
