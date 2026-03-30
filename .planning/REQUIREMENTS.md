@@ -56,25 +56,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EXP-01 | Pending | Pending |
-| EXP-02 | Pending | Pending |
-| EXP-03 | Pending | Pending |
-| EXP-04 | Pending | Pending |
-| EXP-05 | Pending | Pending |
-| VIS-01 | Pending | Pending |
-| VIS-02 | Pending | Pending |
-| CLR-01 | Pending | Pending |
-| CLR-02 | Pending | Pending |
-| TYP-01 | Pending | Pending |
-| TYP-02 | Pending | Pending |
-| SPC-01 | Pending | Pending |
-| SPC-02 | Pending | Pending |
+| CLR-01 | Phase 1 | Pending |
+| CLR-02 | Phase 1 | Pending |
+| TYP-01 | Phase 1 | Pending |
+| TYP-02 | Phase 1 | Pending |
+| EXP-03 | Phase 2 | Pending |
+| EXP-04 | Phase 2 | Pending |
+| EXP-01 | Phase 3 | Pending |
+| EXP-02 | Phase 3 | Pending |
+| EXP-05 | Phase 3 | Pending |
+| VIS-01 | Phase 4 | Pending |
+| VIS-02 | Phase 4 | Pending |
+| SPC-01 | Phase 5 | Pending |
+| SPC-02 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13 ⚠️
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-31*
-*Last updated: 2026-03-31 after initial definition*
+*Last updated: 2026-03-31 after roadmap creation — all 13 requirements mapped*
