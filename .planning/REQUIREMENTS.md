@@ -9,11 +9,11 @@ Requirements for audit remediation. Each maps to roadmap phases.
 
 ### Experience Design
 
-- [ ] **EXP-01**: Season2 page shows a clean "coming soon" message instead of raw HTML placeholder text
-- [ ] **EXP-02**: FAQ contact block includes an actionable contact method (email or Slack link)
+- [x] **EXP-01**: Season2 page shows a clean "coming soon" message instead of raw HTML placeholder text
+- [x] **EXP-02**: FAQ contact block includes an actionable contact method (email or Slack link)
 - [x] **EXP-03**: All interactive elements show a visible `:focus-visible` ring using the accent color
 - [x] **EXP-04**: BaseLayout includes a skip-to-content link for keyboard navigation
-- [ ] **EXP-05**: Session progress bar links have accessible labels (aria-label, not just title)
+- [x] **EXP-05**: Session progress bar links have accessible labels (aria-label, not just title)
 
 ### Visuals
 
@@ -62,9 +62,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TYP-02 | Phase 1 | Complete |
 | EXP-03 | Phase 2 | Complete |
 | EXP-04 | Phase 2 | Complete |
-| EXP-01 | Phase 3 | Pending |
-| EXP-02 | Phase 3 | Pending |
-| EXP-05 | Phase 3 | Pending |
+| EXP-01 | Phase 3 | Complete |
+| EXP-02 | Phase 3 | Complete (placeholder) |
+| EXP-05 | Phase 3 | Complete |
 | VIS-01 | Phase 4 | Pending |
 | VIS-02 | Phase 4 | Pending |
 | SPC-01 | Phase 5 | Pending |
