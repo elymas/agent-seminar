@@ -32,8 +32,8 @@ Requirements for audit remediation. Each maps to roadmap phases.
 
 ### Spacing
 
-- [ ] **SPC-01**: Card padding follows convention: `p-5` for compact, `p-6` for feature cards
-- [ ] **SPC-02**: Section vertical rhythm normalized to consistent `py-12` across pages
+- [x] **SPC-01**: Card padding follows convention: `p-5` for compact, `p-6` for feature cards
+- [x] **SPC-02**: Section vertical rhythm normalized to consistent `py-12` across pages
 
 ## v2 Requirements
 
@@ -67,8 +67,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXP-05 | Phase 3 | Complete |
 | VIS-01 | Phase 4 | Complete |
 | VIS-02 | Phase 4 | Complete |
-| SPC-01 | Phase 5 | Pending |
-| SPC-02 | Phase 5 | Pending |
+| SPC-01 | Phase 5 | Complete (verified) |
+| SPC-02 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 13 total
