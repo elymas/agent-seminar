@@ -55,8 +55,12 @@ Source: 8-point scale is the project default; spacing changes are deferred to Ph
 |------|------|--------|-------------|------|
 | Body | 16px | 400 (regular) | 1.5 | Pretendard (font-sans) |
 | Label / micro | 10px → `--text-label` | 400 (regular) | 1 | IBM Plex Mono (font-mono) |
-| Secondary label | 12px (text-xs) | 700 (bold) | 1 | IBM Plex Mono (font-mono) |
+| Secondary label | 12px (text-xs) | 600 (semibold) | 1 | IBM Plex Mono (font-mono) |
 | Heading | 20–28px (context-dependent) | 600 (semibold) | 1.2 | IBM Plex Mono (font-mono) |
+
+**Two declared weights: 400 (regular) and 600 (semibold).** No third weight is permitted in this phase.
+
+Note on existing `font-bold` (700) usages: The codebase currently contains `font-bold` on page `h1`/`h2` headings, metadata value cells in `[...slug].astro` (week number, time, deliverable), and accent-colored step-number badges across multiple pages. None of these elements are touched in Phase 1. Normalization of `font-bold` to `font-semibold` across the full codebase is deferred to a later phase. Phase 1's Implementation Checklist below modifies only `font-medium` (500) → `font-semibold` (600) at line 147 of `[...slug].astro`.
 
 ### New Token: `--text-label`
 
