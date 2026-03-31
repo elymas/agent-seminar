@@ -43,7 +43,6 @@ Declared values (must be multiples of 4):
 
 Exceptions:
 - Skip-to-content link: `px-4 py-2` (16px × 8px) — matches existing button padding convention
-- Focus ring offset: 2px — matches `--radius-btn` visual rhythm
 - Minimum touch target for menu-toggle button: 44px × 44px (existing `p-2` on a 20px icon gives ~36px; no change required — keyboard fix only, touch target is out of scope for this phase)
 
 > Source: CLAUDE.md CSS conventions, existing component patterns
@@ -52,12 +51,12 @@ Exceptions:
 
 ## Typography
 
+Declared weights for this phase: 400 (regular) + 600 (semibold). These are the only two weights introduced or used by phase-scoped elements.
+
 | Role | Size | Weight | Line Height | Font |
 |------|------|--------|-------------|------|
 | Body | 14px (text-sm) | 400 (regular) | 1.5 | Pretendard |
-| Label | 10px (text-label) | 600 (semibold) | 1 | IBM Plex Mono |
-| Heading | 16px (text-base) | 600 (semibold) | 1.2 | IBM Plex Mono |
-| Display | 28px+ (text-2xl) | 700 (bold) | 1.25 | IBM Plex Mono |
+| Label / Heading / Skip link | 16px and below | 600 (semibold) | 1.2 | IBM Plex Mono |
 
 Skip-to-content link typography:
 - Size: 14px (text-sm)
@@ -85,7 +84,7 @@ Accent (`#10b981`) reserved for:
 
 Focus ring specification:
 - `outline: 2px solid var(--color-accent)`
-- `outline-offset: 2px`
+- `outline-offset: 2px` — this is an outline-rendering offset, not a layout spacing token
 - Applied via `:focus-visible` pseudo-class only (not `:focus`, to avoid mouse-click outlines)
 - Must NOT use `outline: none` anywhere without a replacement
 - Ring color contrast against dark background (#0a0a0a): #10b981 is WCAG AA compliant (contrast ratio ~5.4:1 against #0a0a0a)
