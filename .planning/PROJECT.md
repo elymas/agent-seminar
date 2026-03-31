@@ -1,8 +1,8 @@
-# Agent Seminar — UI Audit Remediation
+# Agent Seminar — AI Agent Literacy Seminar Website
 
 ## What This Is
 
-A quality pass on the AI Agent Seminar website (Astro v6 + Tailwind CSS v4 static site) to address all findings from the 6-pillar UI audit. The site scored 18/24 — the goal is to resolve every finding and reach production polish across copywriting, visuals, color, typography, spacing, and experience design.
+A polished static website for an AI Agent literacy seminar targeting advertising media rep employees. Built with Astro v6 + Tailwind CSS v4, deployed to GitHub Pages. All 6 audit pillars (copywriting, visuals, color, typography, spacing, experience design) have been addressed — the site is production-ready.
 
 ## Core Value
 
@@ -21,75 +21,62 @@ Every page a seminar attendee can reach must feel intentionally finished — no 
 - ✓ AdoptionLadder 5-level visualization — existing
 - ✓ GitHub Pages deployment via GitHub Actions — existing
 - ✓ Correct `lang="ko"`, `aria-label`, `aria-expanded` usage — existing
-- ✓ Specific Korean CTAs with no generic labels (Pillar 1: 4/4) — existing
-- ✓ Semantic badge tokens (`--color-badge-concept`, `--color-badge-special`) in @theme — Validated in Phase 1
-- ✓ Blockquote background uses `var(--color-accent-subtle)` theme token — Validated in Phase 1
-- ✓ `--text-label` token replaces all `text-[10px]` arbitrary values — Validated in Phase 1
-- ✓ `font-semibold` normalized (was `font-medium`) — Validated in Phase 1
-- ✓ Global `*:focus-visible` ring on all interactive elements — Validated in Phase 2
-- ✓ Skip-to-content link in BaseLayout (`본문으로 바로가기`) — Validated in Phase 2
+- ✓ Specific Korean CTAs with no generic labels — existing
+- ✓ Semantic badge tokens (`--color-badge-concept`, `--color-badge-special`) — v1.0
+- ✓ Blockquote background uses `var(--color-accent-subtle)` theme token — v1.0
+- ✓ `--text-label` token replaces all `text-[10px]` arbitrary values — v1.0
+- ✓ `font-semibold` normalized (was `font-medium`) — v1.0
+- ✓ Global `*:focus-visible` ring on all interactive elements — v1.0
+- ✓ Skip-to-content link in BaseLayout — v1.0
+- ✓ Season2 shows clean "coming soon" message — v1.0
+- ✓ FAQ contact block includes actionable contact method — v1.0
+- ✓ Session progress bar links have accessible labels — v1.0
+- ✓ Korean H1 headings use `tracking-tight` — v1.0
+- ✓ AdoptionLadder renders with `activeLevel={1}` default — v1.0
+- ✓ Card padding convention (`p-5` compact / `p-6` feature) — v1.0
+- ✓ Section vertical rhythm normalized to `py-12` — v1.0
 
 ### Active
 
-- [ ] Fix raw HTML placeholder on season2.astro (visible `<!-- -->` and `<iframe>` text)
-- [ ] Add actionable contact method to FAQ contact block
-- [ ] Fix IBM Plex Mono word-spacing on Korean H1 headings
-- [ ] Set AdoptionLadder activeLevel=1 on homepage
-- [ ] Add accessible labels to session progress bar links
-- [ ] Establish card padding convention (p-5 compact / p-6 feature) and apply consistently
-- [ ] Normalize section vertical rhythm (`py-12` vs `py-10`) across pages
+(None — next milestone not yet planned)
 
 ### Out of Scope
 
 - Content changes to session Markdown files — audit found no copy issues
-- New pages or features — this is a polish pass, not a feature release
-- Design system overhaul — work within the existing `@theme` token system
-- Season 2 content (Google Forms URL, actual season 2 curriculum) — not yet available
+- New pages or features — this was a polish pass
+- Design system overhaul — worked within existing `@theme` token system
+- Season 2 content (Google Forms URL, actual curriculum) — not yet available
 - Performance optimization — site is already static with no JS framework
+- Mobile app or PWA — web-only static site
+- Offline mode — static site served from CDN
 
 ## Context
 
-- **Audience:** 광고 미디어렙 전직원 (advertising media rep employees) attending an AI Agent literacy seminar
+- **Audience:** 광고 미디어렙 전직원 attending AI Agent literacy seminar
 - **Live URL:** https://elymas.github.io/agent-seminar/
-- **Audit baseline:** 18/24 across 6 pillars (Copywriting 4/4, Visuals 3/4, Color 3/4, Typography 3/4, Spacing 3/4, Experience Design 2/4)
-- **Existing codebase map:** `.planning/codebase/` (ARCHITECTURE.md, STACK.md)
-- **Key files:** 7 static pages, 1 dynamic route, 1 layout, 2 components, 1 global CSS
-- **Pillar 1 (Copywriting) is already 4/4** — no work needed there
-- **Pillar 6 (Experience Design) has the most critical issues** — raw placeholder, dead-end contact, no focus styles
-
-## Constraints
-
-- **Tech stack:** Astro v6 + Tailwind CSS v4 — no new dependencies
-- **Hosting:** GitHub Pages with `base: '/agent-seminar/'` — all URLs must respect base path
-- **Fonts:** IBM Plex Mono (headings) + Pretendard (body) — keep the two-font system
-- **Node.js:** >=22.12.0 (enforced in package.json)
-- **No client-side JS framework:** Site is zero-JS SSG — fixes must be CSS/HTML only
+- **Shipped:** v1.0 UI Audit Remediation (2026-03-31) — 13/13 requirements resolved
+- **Codebase:** ~4,000 LOC (Astro + TypeScript + CSS + Markdown)
+- **Tech stack:** Astro v6, Tailwind CSS v4, GitHub Pages, GitHub Actions
+- **Outstanding:** `[CONTACT_EMAIL]` placeholder in FAQ page needs real email address
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Address all audit findings, not just top 3 | User wants to reach full polish (24/24 target) | — Pending |
-| Keep IBM Plex Mono for headings | Distinctive tech-seminar aesthetic; fix spacing with `tracking-tight` instead of switching fonts | — Pending |
-| Add semantic badge tokens rather than simplify to accent-only | Preserves visual distinction between session types while bringing colors into the design system | — Pending |
-| Season2 placeholder → clean "coming soon" message | Can't add actual Google Forms URL yet; remove developer artifacts | — Pending |
+| Address all audit findings, not just top 3 | User wants full polish (24/24 target) | ✓ Good — all 13 shipped |
+| Keep IBM Plex Mono for headings | Distinctive tech-seminar aesthetic; fix spacing with `tracking-tight` | ✓ Good — legibility resolved |
+| Add semantic badge tokens rather than simplify to accent-only | Preserves visual distinction between session types | ✓ Good — clean token system |
+| Season2 placeholder → clean "coming soon" message | Can't add actual Google Forms URL yet; remove developer artifacts | ✓ Good — clean UX |
+| Universal `*:focus-visible` selector (not per-component) | Single rule covers all interactive elements | ✓ Good — zero maintenance |
+| Blast-radius ordering: tokens → accessibility → per-page → visual → spacing | Earlier phases provide foundation for later ones | ✓ Good — no rework needed |
 
-## Evolution
+## Constraints
 
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd:transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd:complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
+- **Tech stack:** Astro v6 + Tailwind CSS v4 — no new dependencies
+- **Hosting:** GitHub Pages with `base: '/agent-seminar/'` — all URLs must respect base path
+- **Fonts:** IBM Plex Mono (headings) + Pretendard (body) — two-font system
+- **Node.js:** >=22.12.0 (enforced in package.json)
+- **No client-side JS framework:** Zero-JS SSG — fixes must be CSS/HTML only
 
 ---
-*Last updated: 2026-03-31 after Phase 2 completion*
+*Last updated: 2026-03-31 after v1.0 milestone*
