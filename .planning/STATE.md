@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Phase 3 UI-SPEC approved
-last_updated: "2026-03-31T04:53:49.000Z"
+status: complete
+stopped_at: All phases complete
+last_updated: "2026-03-31T07:25:00.000Z"
 last_activity: 2026-03-31
 progress:
   total_phases: 5
-  completed_phases: 2
-  total_plans: 2
-  completed_plans: 2
-  percent: 0
+  completed_phases: 5
+  total_plans: 5
+  completed_plans: 5
+  percent: 100
 ---
 
 # Project State
@@ -21,64 +21,26 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-31)
 
 **Core value:** Every page a seminar attendee can reach must feel intentionally finished
-**Current focus:** Phase 02 — global-accessibility
+**Current focus:** Milestone complete — all phases done
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 5 (final)
+Plan: All plans executed
+Status: Milestone complete
 Last activity: 2026-03-31
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██████████] 100%
 
-## Performance Metrics
+## Milestone v1.0 Summary
 
-**Velocity:**
+All 13 requirements resolved across 5 phases:
+- Phase 1: Design System Tokens (CLR-01, CLR-02, TYP-01, TYP-02)
+- Phase 2: Global Accessibility (EXP-03, EXP-04)
+- Phase 3: Page-Specific Fixes (EXP-01, EXP-02, EXP-05)
+- Phase 4: Visual Tuning (VIS-01, VIS-02)
+- Phase 5: Spacing Consistency (SPC-01, SPC-02)
 
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: 0 hours
+## Outstanding
 
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-
-- Last 5 plans: —
-- Trend: —
-
-*Updated after each plan completion*
-| Phase 01-design-system-tokens P01 | 2 | 2 tasks | 4 files |
-| Phase 02-global-accessibility P01 | 71s | 2 tasks | 2 files |
-
-## Accumulated Context
-
-### Decisions
-
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- [Init]: IBM Plex Mono kept for headings; fix spacing with `tracking-tight` (not font swap)
-- [Init]: Semantic badge tokens added (`--color-badge-concept`, `--color-badge-special`) to preserve visual distinction
-- [Init]: Season2 → clean "coming soon" message (Google Forms URL not yet available)
-- [Phase 01-design-system-tokens]: SessionCard badge excludes border token classes — original card badge had no border, so border-badge-* intentionally omitted from SessionCard (unlike slug.astro)
-- [Phase 02-global-accessibility]: Used *:focus-visible universal selector to cover all interactive elements with single rule, no per-component overrides needed
-- [Phase 02-global-accessibility]: Used Tailwind sr-only/focus:not-sr-only pattern for skip link — no display:none, preserves tab order per WCAG
-
-### Pending Todos
-
-None yet.
-
-### Blockers/Concerns
-
-None yet.
-
-## Session Continuity
-
-Last session: 2026-03-31T04:53:48.996Z
-Stopped at: Phase 3 UI-SPEC approved
-Resume file: .planning/phases/03-page-specific-fixes/03-UI-SPEC.md
+- EXP-02: `[CONTACT_EMAIL]` placeholder in `src/pages/faq.astro` must be replaced with real email before production deploy
