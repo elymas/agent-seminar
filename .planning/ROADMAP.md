@@ -44,7 +44,11 @@ Plans:
   1. Tabbing through any page shows a clearly visible accent-color ring on each focused interactive element
   2. A "Skip to main content" link appears at the top of the DOM on every page and is functional when activated by keyboard
   3. No interactive element (nav links, buttons, accordion toggles, session cards) is left without a visible focus indicator
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 02-01-PLAN.md — Add global focus-visible ring and skip-to-content link across 2 files
+
 **UI hint**: yes
 
 ### Phase 3: Page-Specific Fixes
@@ -87,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Design System Tokens | 1/1 | Complete   | 2026-03-31 |
-| 2. Global Accessibility | 0/? | Not started | - |
+| 2. Global Accessibility | 0/1 | Not started | - |
 | 3. Page-Specific Fixes | 0/? | Not started | - |
 | 4. Visual Tuning | 0/? | Not started | - |
 | 5. Spacing Consistency | 0/? | Not started | - |
