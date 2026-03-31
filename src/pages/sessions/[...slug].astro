@@ -51,6 +51,7 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
             'bg-bg-hover'
           }`}
           title={`Session ${n}`}
+          aria-label={`Session ${n}${n === number ? ' (현재 세션)' : ''}으로 이동`}
         />
       ))}
     </div>
