@@ -34,7 +34,7 @@ const typeLabel = {
     <div class="flex items-start justify-between gap-3 mb-3">
       <div class="flex items-center gap-2">
         <span class="font-mono text-xs text-text-muted">#{number.toString().padStart(2, '0')}</span>
-        <span class={`text-xs px-1.5 py-0.5 rounded-btn font-mono ${type === 'practice' ? 'bg-accent/10 text-accent' : type === 'special' ? 'bg-yellow-500/10 text-yellow-400' : 'bg-blue-500/10 text-blue-400'}`}>
+        <span class={`text-xs px-1.5 py-0.5 rounded-btn font-mono ${type === 'practice' ? 'bg-accent/10 text-accent' : type === 'special' ? 'bg-badge-special-bg text-badge-special' : 'bg-badge-concept-bg text-badge-concept'}`}>
           {typeLabel}
         </span>
       </div>

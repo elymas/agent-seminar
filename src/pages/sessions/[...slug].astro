@@ -25,9 +25,9 @@ const { number, title, week, weekTheme, type, mission, level, keyMessage, delive
 
 const typeLabel: Record<string, string> = { concept: '개념', practice: '실습', special: '특별' };
 const typeColor: Record<string, string> = {
-  concept: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  concept: 'bg-badge-concept-bg text-badge-concept border-badge-concept-border',
   practice: 'bg-accent/10 text-accent border-accent/20',
-  special: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+  special: 'bg-badge-special-bg text-badge-special border-badge-special-border',
 };
 
 const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
@@ -38,8 +38,8 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
   <!-- Session Progress Bar -->
   <div class="mb-8 py-3 border-b border-bg-hover">
     <div class="flex items-center justify-between mb-2">
-      <span class="font-mono text-[10px] text-text-muted tracking-widest uppercase">Session Progress</span>
-      <span class="font-mono text-[10px] text-accent">{number} / 12</span>
+      <span class="font-mono text-label text-text-muted tracking-widest uppercase">Session Progress</span>
+      <span class="font-mono text-label text-accent">{number} / 12</span>
     </div>
     <div class="flex gap-1">
       {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
@@ -90,24 +90,24 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
   <!-- Meta Cards -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
     <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">WEEK</p>
+      <p class="font-mono text-accent text-label tracking-widest uppercase mb-2">WEEK</p>
       <p class="text-text-primary text-base font-bold font-mono">{week}주차</p>
       <p class="text-text-muted text-xs mt-1">{weekTheme}</p>
     </div>
     <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">TIME</p>
+      <p class="font-mono text-accent text-label tracking-widest uppercase mb-2">TIME</p>
       <p class="text-text-primary text-base font-bold font-mono">30분</p>
       <p class="text-text-muted text-xs mt-1">{timeStructure}</p>
     </div>
     <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
-      <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">DELIVERABLE</p>
+      <p class="font-mono text-accent text-label tracking-widest uppercase mb-2">DELIVERABLE</p>
       <p class={`text-base font-bold font-mono ${deliverable !== '없음' ? 'text-accent' : 'text-text-muted'}`}>
         {deliverable}
       </p>
     </div>
     {bookRef && (
       <div class="bg-bg-card rounded-card p-5 border border-bg-hover">
-        <p class="font-mono text-accent text-[10px] tracking-widest uppercase mb-2">REFERENCE</p>
+        <p class="font-mono text-accent text-label tracking-widest uppercase mb-2">REFERENCE</p>
         <p class="text-text-secondary text-xs leading-relaxed">{bookRef}</p>
       </div>
     )}
@@ -137,14 +137,14 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
     {toc.length > 2 && (
       <aside class="hidden lg:block">
         <nav class="sticky top-20" aria-label="목차">
-          <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-3">목차</p>
+          <p class="font-mono text-label text-text-muted tracking-widest uppercase mb-3">목차</p>
           <ul class="space-y-1.5 border-l border-bg-hover pl-3">
             {toc.map((heading) => (
               <li>
                 <a
                   href={`#${heading.slug}`}
                   class={`block text-xs transition-colors hover:text-accent ${
-                    heading.depth === 2 ? 'text-text-secondary font-medium' : 'text-text-muted pl-2'
+                    heading.depth === 2 ? 'text-text-secondary font-semibold' : 'text-text-muted pl-2'
                   }`}
                 >
                   {heading.text}
@@ -161,7 +161,7 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
   <nav class="mt-16 pt-8 border-t border-bg-hover grid grid-cols-2 gap-4" aria-label="세션 탐색">
     {prev ? (
       <a href={`${base}sessions/${prev.id}/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors">
-        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">&larr; 이전 세션</p>
+        <p class="font-mono text-label text-text-muted tracking-widest uppercase mb-2">&larr; 이전 세션</p>
         <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors leading-snug">
           #{prev.data.number.toString().padStart(2, '0')} {prev.data.title}
         </p>
@@ -169,14 +169,14 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
     ) : <div />}
     {next ? (
       <a href={`${base}sessions/${next.id}/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors text-right">
-        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">다음 세션 &rarr;</p>
+        <p class="font-mono text-label text-text-muted tracking-widest uppercase mb-2">다음 세션 &rarr;</p>
         <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors leading-snug">
           #{next.data.number.toString().padStart(2, '0')} {next.data.title}
         </p>
       </a>
     ) : (
       <a href={`${base}curriculum/`} class="group bg-bg-card rounded-card p-5 border border-bg-hover hover:border-accent/30 transition-colors text-right">
-        <p class="font-mono text-[10px] text-text-muted tracking-widest uppercase mb-2">돌아가기</p>
+        <p class="font-mono text-label text-text-muted tracking-widest uppercase mb-2">돌아가기</p>
         <p class="text-text-primary text-sm font-mono font-semibold group-hover:text-accent transition-colors">
           커리큘럼 전체 보기
         </p>
@@ -310,8 +310,7 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
   /* Blockquotes as callouts */
   .session-content blockquote {
     border-left: 3px solid var(--color-accent);
-    background: var(--color-accent);
-    background: rgba(16, 185, 129, 0.05);
+    background: var(--color-accent-subtle);
     padding: 1rem 1.25rem;
     margin: 1.25rem 0;
     border-radius: 0 4px 4px 0;
