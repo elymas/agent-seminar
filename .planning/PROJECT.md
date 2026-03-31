@@ -22,6 +22,10 @@ Every page a seminar attendee can reach must feel intentionally finished — no 
 - ✓ GitHub Pages deployment via GitHub Actions — existing
 - ✓ Correct `lang="ko"`, `aria-label`, `aria-expanded` usage — existing
 - ✓ Specific Korean CTAs with no generic labels (Pillar 1: 4/4) — existing
+- ✓ Semantic badge tokens (`--color-badge-concept`, `--color-badge-special`) in @theme — Validated in Phase 1
+- ✓ Blockquote background uses `var(--color-accent-subtle)` theme token — Validated in Phase 1
+- ✓ `--text-label` token replaces all `text-[10px]` arbitrary values — Validated in Phase 1
+- ✓ `font-semibold` normalized (was `font-medium`) — Validated in Phase 1
 
 ### Active
 
@@ -32,10 +36,6 @@ Every page a seminar attendee can reach must feel intentionally finished — no 
 - [ ] Fix IBM Plex Mono word-spacing on Korean H1 headings
 - [ ] Set AdoptionLadder activeLevel=1 on homepage
 - [ ] Add accessible labels to session progress bar links
-- [ ] Add semantic badge tokens (`--color-badge-concept`, `--color-badge-special`) to theme
-- [ ] Replace hardcoded `rgba()` in session detail blockquote with theme token
-- [ ] Replace `text-[10px]` arbitrary values with a `--text-label` theme token
-- [ ] Normalize `font-medium` → `font-semibold` (1 instance)
 - [ ] Establish card padding convention (p-5 compact / p-6 feature) and apply consistently
 - [ ] Normalize section vertical rhythm (`py-12` vs `py-10`) across pages
 
@@ -92,4 +92,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after initialization*
+*Last updated: 2026-03-31 after Phase 1 completion*
