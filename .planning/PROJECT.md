@@ -26,13 +26,13 @@ Every page a seminar attendee can reach must feel intentionally finished — no 
 - ✓ Blockquote background uses `var(--color-accent-subtle)` theme token — Validated in Phase 1
 - ✓ `--text-label` token replaces all `text-[10px]` arbitrary values — Validated in Phase 1
 - ✓ `font-semibold` normalized (was `font-medium`) — Validated in Phase 1
+- ✓ Global `*:focus-visible` ring on all interactive elements — Validated in Phase 2
+- ✓ Skip-to-content link in BaseLayout (`본문으로 바로가기`) — Validated in Phase 2
 
 ### Active
 
 - [ ] Fix raw HTML placeholder on season2.astro (visible `<!-- -->` and `<iframe>` text)
 - [ ] Add actionable contact method to FAQ contact block
-- [ ] Add `:focus-visible` styles to global CSS
-- [ ] Add skip-to-content link in BaseLayout
 - [ ] Fix IBM Plex Mono word-spacing on Korean H1 headings
 - [ ] Set AdoptionLadder activeLevel=1 on homepage
 - [ ] Add accessible labels to session progress bar links
@@ -92,4 +92,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 1 completion*
+*Last updated: 2026-03-31 after Phase 2 completion*
