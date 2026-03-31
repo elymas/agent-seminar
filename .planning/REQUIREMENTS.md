@@ -22,13 +22,13 @@ Requirements for audit remediation. Each maps to roadmap phases.
 
 ### Color
 
-- [ ] **CLR-01**: Session type badge colors defined as semantic tokens in `@theme` block
-- [ ] **CLR-02**: Hardcoded `rgba()` in session detail blockquote replaced with theme token
+- [x] **CLR-01**: Session type badge colors defined as semantic tokens in `@theme` block
+- [x] **CLR-02**: Hardcoded `rgba()` in session detail blockquote replaced with theme token
 
 ### Typography
 
-- [ ] **TYP-01**: `text-[10px]` replaced with a `--text-label` theme token across all 14 uses
-- [ ] **TYP-02**: Single `font-medium` instance normalized to `font-semibold`
+- [x] **TYP-01**: `text-[10px]` replaced with a `--text-label` theme token across all 14 uses
+- [x] **TYP-02**: Single `font-medium` instance normalized to `font-semibold`
 
 ### Spacing
 
@@ -56,10 +56,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLR-01 | Phase 1 | Pending |
-| CLR-02 | Phase 1 | Pending |
-| TYP-01 | Phase 1 | Pending |
-| TYP-02 | Phase 1 | Pending |
+| CLR-01 | Phase 1 | Complete |
+| CLR-02 | Phase 1 | Complete |
+| TYP-01 | Phase 1 | Complete |
+| TYP-02 | Phase 1 | Complete |
 | EXP-03 | Phase 2 | Pending |
 | EXP-04 | Phase 2 | Pending |
 | EXP-01 | Phase 3 | Pending |

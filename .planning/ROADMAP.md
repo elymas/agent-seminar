@@ -12,7 +12,7 @@ Thirteen targeted CSS/HTML fixes across five audit pillars, applied in blast-rad
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Design System Tokens** - Add semantic color and typography tokens to the `@theme` block
+- [x] **Phase 1: Design System Tokens** - Add semantic color and typography tokens to the `@theme` block (completed 2026-03-31)
 - [ ] **Phase 2: Global Accessibility** - Add `:focus-visible` ring styles and skip-to-content link in BaseLayout
 - [ ] **Phase 3: Page-Specific Fixes** - Fix season2 placeholder, FAQ contact block, and session progress bar labels
 - [ ] **Phase 4: Visual Tuning** - Fix IBM Plex Mono heading word-spacing and set AdoptionLadder focal point
@@ -29,10 +29,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Session detail page blockquote background uses a theme token, not a hardcoded `rgba()` call
   3. The 10px label size exists as a `--text-label` token and no `text-[10px]` arbitrary class appears anywhere in the codebase
   4. Font weight for the affected element reads `font-semibold`, not `font-medium`
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 01-01-PLAN.md — Add 8 semantic tokens to @theme and replace all hardcoded values across 4 files
+- [x] 01-01-PLAN.md — Add 8 semantic tokens to @theme and replace all hardcoded values across 4 files
 
 **UI hint**: yes
 
@@ -86,7 +86,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Design System Tokens | 0/1 | Not started | - |
+| 1. Design System Tokens | 1/1 | Complete   | 2026-03-31 |
 | 2. Global Accessibility | 0/? | Not started | - |
 | 3. Page-Specific Fixes | 0/? | Not started | - |
 | 4. Visual Tuning | 0/? | Not started | - |
