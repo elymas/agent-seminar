@@ -26,6 +26,12 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     <title>{title} | AI Agent Seminar</title>
   </head>
   <body class="bg-bg text-text-primary font-sans min-h-screen">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-accent focus:text-bg focus:font-mono focus:font-semibold focus:text-sm focus:px-4 focus:py-2 focus:rounded-btn"
+    >
+      본문으로 바로가기
+    </a>
     <nav class="border-b border-bg-hover sticky top-0 bg-bg/95 backdrop-blur-sm z-50" aria-label="Main navigation">
       <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href={`${base}`} class="font-mono font-bold text-accent hover:text-accent-hover transition-colors text-sm tracking-tight">
@@ -55,7 +61,7 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
       </div>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-4 py-8" role="main">
+    <main id="main-content" class="max-w-5xl mx-auto px-4 py-8" role="main">
       <slot />
     </main>
 
