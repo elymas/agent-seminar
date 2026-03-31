@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Design System Tokens** - Add semantic color and typography tokens to the `@theme` block (completed 2026-03-31)
 - [x] **Phase 2: Global Accessibility** - Add `:focus-visible` ring styles and skip-to-content link in BaseLayout (completed 2026-03-31)
 - [x] **Phase 3: Page-Specific Fixes** - Fix season2 placeholder, FAQ contact block, and session progress bar labels (completed 2026-03-31)
-- [ ] **Phase 4: Visual Tuning** - Fix IBM Plex Mono heading word-spacing and set AdoptionLadder focal point
+- [x] **Phase 4: Visual Tuning** - Fix IBM Plex Mono heading word-spacing and set AdoptionLadder focal point
 - [ ] **Phase 5: Spacing Consistency** - Normalize card padding and section vertical rhythm across all pages
 
 ## Phase Details
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Design System Tokens | 1/1 | Complete   | 2026-03-31 |
 | 2. Global Accessibility | 1/1 | Complete   | 2026-03-31 |
 | 3. Page-Specific Fixes | 1/1 | Complete   | 2026-03-31 |
-| 4. Visual Tuning | 0/? | Not started | - |
+| 4. Visual Tuning | 1/1 | Complete   | 2026-03-31 |
 | 5. Spacing Consistency | 0/? | Not started | - |

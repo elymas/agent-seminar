@@ -17,8 +17,8 @@ Requirements for audit remediation. Each maps to roadmap phases.
 
 ### Visuals
 
-- [ ] **VIS-01**: Korean H1 headings use `tracking-tight` to fix IBM Plex Mono word-spacing
-- [ ] **VIS-02**: Homepage AdoptionLadder renders with `activeLevel={1}` as a default focal point
+- [x] **VIS-01**: Korean H1 headings use `tracking-tight` to fix IBM Plex Mono word-spacing
+- [x] **VIS-02**: Homepage AdoptionLadder renders with `activeLevel={1}` as a default focal point
 
 ### Color
 
@@ -65,8 +65,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXP-01 | Phase 3 | Complete |
 | EXP-02 | Phase 3 | Complete (placeholder) |
 | EXP-05 | Phase 3 | Complete |
-| VIS-01 | Phase 4 | Pending |
-| VIS-02 | Phase 4 | Pending |
+| VIS-01 | Phase 4 | Complete |
+| VIS-02 | Phase 4 | Complete |
 | SPC-01 | Phase 5 | Pending |
 | SPC-02 | Phase 5 | Pending |
 
