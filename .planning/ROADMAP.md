@@ -47,7 +47,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 02-01-PLAN.md — Add global focus-visible ring and skip-to-content link across 2 files
+- [x] 02-01-PLAN.md — Add global focus-visible ring and skip-to-content link across 2 files
 
 **UI hint**: yes
 
