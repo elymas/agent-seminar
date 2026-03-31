@@ -13,4 +13,18 @@
   --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
   --radius-card: 4px;
   --radius-btn: 2px;
+
+  /* CLR-01 — Session type badge colors */
+  --color-badge-concept: #3b82f6;
+  --color-badge-concept-bg: rgba(59, 130, 246, 0.10);
+  --color-badge-concept-border: rgba(59, 130, 246, 0.20);
+  --color-badge-special: #eab308;
+  --color-badge-special-bg: rgba(234, 179, 8, 0.10);
+  --color-badge-special-border: rgba(234, 179, 8, 0.20);
+
+  /* CLR-02 — Blockquote background */
+  --color-accent-subtle: rgba(16, 185, 129, 0.05);
+
+  /* TYP-01 — Label font size */
+  --text-label: 10px;
 }

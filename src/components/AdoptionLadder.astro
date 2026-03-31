@@ -24,8 +24,8 @@ const levels = [
             {level.num}
           </div>
           <span class="font-mono text-xs text-text-primary font-semibold">{level.name}</span>
-          <span class="text-[10px] text-text-muted mt-0.5 text-center">{level.desc}</span>
-          <span class="text-[10px] text-accent font-mono mt-1">{level.weeks}</span>
+          <span class="text-label text-text-muted mt-0.5 text-center">{level.desc}</span>
+          <span class="text-label text-accent font-mono mt-1">{level.weeks}</span>
         </div>
         {i < levels.length - 1 && (
           <div class={`h-px flex-shrink-0 w-8 ${level.num < activeLevel ? 'bg-accent' : 'bg-bg-hover'}`} />
@@ -43,8 +43,8 @@ const levels = [
         </div>
         <div>
           <span class="font-mono text-xs text-text-primary font-semibold">{level.name}</span>
-          <span class="text-[10px] text-text-muted ml-2">{level.desc}</span>
-          <span class="text-[10px] text-accent font-mono ml-2">{level.weeks}</span>
+          <span class="text-label text-text-muted ml-2">{level.desc}</span>
+          <span class="text-label text-accent font-mono ml-2">{level.weeks}</span>
         </div>
       </div>
     ))}
